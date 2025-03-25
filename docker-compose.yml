@@ -1,5 +1,5 @@
 services:
-  phoenix-strapi:
+  strapi:
     build: .
     container_name: phoenix-strapi
     restart: unless-stopped
@@ -12,6 +12,6 @@ services:
       DATABASE_NAME: phoenix
       DATABASE_USERNAME: phoenix
       DATABASE_PASSWORD: Zpphz7LAALKrH65h
-      DATABASE_SSL: false
+      DATABASE_SSL: "false"
     volumes:
       - ./public/uploads:/app/public/uploads

@@ -12,6 +12,9 @@ COPY package.json package-lock.json* ./
 # Instala as dependências
 RUN npm ci
 
+# Instala dependencia mysql2
+RUN npm install mysql2 --save
+
 # Copia os arquivos do projeto
 COPY . .
 
