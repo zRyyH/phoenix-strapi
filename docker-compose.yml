@@ -1,0 +1,17 @@
+services:
+  phoenix-strapi:
+    build: .
+    container_name: phoenix-strapi
+    restart: unless-stopped
+    network_mode: "host"
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: localhost
+      DATABASE_PORT: 3306
+      DATABASE_NAME: phoenix
+      DATABASE_USERNAME: phoenix
+      DATABASE_PASSWORD: Zpphz7LAALKrH65h
+      DATABASE_SSL: false
+    volumes:
+      - ./public/uploads:/app/public/uploads
