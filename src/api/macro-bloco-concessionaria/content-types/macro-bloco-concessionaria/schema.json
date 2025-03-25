@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macro_bloco_concessionarias",
+  "info": {
+    "singularName": "macro-bloco-concessionaria",
+    "pluralName": "macro-bloco-concessionarias",
+    "displayName": "macro_bloco_concessionaria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "valor_conta": {
+      "type": "integer"
+    },
+    "m3_aferido": {
+      "type": "string"
+    },
+    "data_leitura": {
+      "type": "date"
+    },
+    "proxima_leitura": {
+      "type": "date"
+    },
+    "leitura_macro_m3": {
+      "type": "decimal"
+    },
+    "macro_bloco": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro-bloco.macro-bloco",
+      "mappedBy": "macro_bloco_concessionaria"
+    }
+  }
+}

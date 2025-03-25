@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macro_bloco_empresas",
+  "info": {
+    "singularName": "macro-bloco-empresa",
+    "pluralName": "macro-bloco-empresas",
+    "displayName": "macro_bloco_empresa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "m3_aferido": {
+      "type": "string"
+    },
+    "leitura_macro": {
+      "type": "decimal"
+    },
+    "valor_residual": {
+      "type": "decimal"
+    },
+    "valor_residual_percentil": {
+      "type": "decimal"
+    },
+    "macro_bloco": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro-bloco.macro-bloco",
+      "mappedBy": "macro_bloco_empresa"
+    }
+  }
+}

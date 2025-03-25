@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macro_blocos",
+  "info": {
+    "singularName": "macro-bloco",
+    "pluralName": "macro-blocos",
+    "displayName": "macro_bloco"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "macro_bloco_concessionaria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro-bloco-concessionaria.macro-bloco-concessionaria",
+      "inversedBy": "macro_bloco"
+    },
+    "macro_bloco_empresa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro-bloco-empresa.macro-bloco-empresa",
+      "inversedBy": "macro_bloco"
+    },
+    "macro": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::macro.macro",
+      "inversedBy": "macro_blocos"
+    }
+  }
+}

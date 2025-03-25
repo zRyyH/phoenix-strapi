@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macros",
+  "info": {
+    "singularName": "macro",
+    "pluralName": "macros",
+    "displayName": "macro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "observacoes": {
+      "type": "text"
+    },
+    "macro_condominio_concessionaria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dados-macro.dados-macro",
+      "inversedBy": "macro"
+    },
+    "macro_condominio_empresa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro-condominio-empresa.macro-condominio-empresa",
+      "inversedBy": "macro"
+    },
+    "imagens": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "macro_blocos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::macro-bloco.macro-bloco",
+      "mappedBy": "macro"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "macros"
+    }
+  }
+}

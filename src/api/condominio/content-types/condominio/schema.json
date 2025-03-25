@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "condominios",
+  "info": {
+    "singularName": "condominio",
+    "pluralName": "condominios",
+    "displayName": "condominio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string"
+    },
+    "hidrometro": {
+      "type": "string"
+    },
+    "valor_medicao": {
+      "type": "decimal"
+    },
+    "has_hidrometro_quente": {
+      "type": "boolean"
+    },
+    "hidrometro_quente": {
+      "type": "string"
+    },
+    "is_garantidora": {
+      "type": "boolean"
+    },
+    "valor_percentual": {
+      "type": "decimal"
+    },
+    "is_conta_zero": {
+      "type": "boolean"
+    },
+    "is_residuo_percentual": {
+      "type": "boolean"
+    },
+    "blocos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bloco.bloco",
+      "mappedBy": "condominio"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "condominios"
+    }
+  }
+}

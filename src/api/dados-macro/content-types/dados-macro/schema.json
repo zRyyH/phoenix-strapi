@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dados_macros",
+  "info": {
+    "singularName": "dados-macro",
+    "pluralName": "dados-macros",
+    "displayName": "macro_condominio_concessionaria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "valor_conta": {
+      "type": "decimal"
+    },
+    "m3_aferido": {
+      "type": "string"
+    },
+    "data_leitura": {
+      "type": "date"
+    },
+    "proxima_leitura": {
+      "type": "date"
+    },
+    "leitura_macro_m3": {
+      "type": "integer"
+    },
+    "macro": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro.macro",
+      "mappedBy": "macro_condominio_concessionaria"
+    }
+  }
+}

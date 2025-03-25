@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leituras",
+  "info": {
+    "singularName": "leitura",
+    "pluralName": "leituras",
+    "displayName": "leitura"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "hidrometro",
+        "hidrometro_quente",
+        "gas"
+      ]
+    },
+    "leitura": {
+      "type": "integer"
+    },
+    "imovel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::imovel.imovel",
+      "inversedBy": "leituras"
+    },
+    "leitura_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

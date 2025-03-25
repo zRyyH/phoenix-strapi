@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blocos",
+  "info": {
+    "singularName": "bloco",
+    "pluralName": "blocos",
+    "displayName": "bloco"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "hidrometro": {
+      "type": "string"
+    },
+    "is_incluir_valor_total_pagar": {
+      "type": "boolean"
+    },
+    "is_rateio": {
+      "type": "boolean"
+    },
+    "imovels": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::imovel.imovel",
+      "mappedBy": "bloco"
+    },
+    "faixa_de_consumos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faixa-de-consumo.faixa-de-consumo",
+      "mappedBy": "bloco"
+    },
+    "condominio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::condominio.condominio",
+      "inversedBy": "blocos"
+    }
+  }
+}

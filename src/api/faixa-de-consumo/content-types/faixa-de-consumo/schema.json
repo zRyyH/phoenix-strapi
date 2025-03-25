@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faixa_de_consumos",
+  "info": {
+    "singularName": "faixa-de-consumo",
+    "pluralName": "faixa-de-consumos",
+    "displayName": "faixa_de_consumo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "bloco": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bloco.bloco",
+      "inversedBy": "faixa_de_consumos"
+    }
+  }
+}

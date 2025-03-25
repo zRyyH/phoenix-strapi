@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macro_condominio_empresas",
+  "info": {
+    "singularName": "macro-condominio-empresa",
+    "pluralName": "macro-condominio-empresas",
+    "displayName": "macro_condominio_empresa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "data_leitura": {
+      "type": "date"
+    },
+    "m3_aferido": {
+      "type": "string"
+    },
+    "proxima_leitura": {
+      "type": "date"
+    },
+    "leitura_macro": {
+      "type": "integer"
+    },
+    "mes_referencia": {
+      "type": "date"
+    },
+    "valor_residual": {
+      "type": "decimal"
+    },
+    "valor_residual_percentil": {
+      "type": "decimal"
+    },
+    "macro": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::macro.macro",
+      "mappedBy": "macro_condominio_empresa"
+    }
+  }
+}

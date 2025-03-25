@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imovels",
+  "info": {
+    "singularName": "imovel",
+    "pluralName": "imovels",
+    "displayName": "imovel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "apartamento",
+        "casa",
+        "vaga",
+        "loja"
+      ]
+    },
+    "nome_proprietario": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "hidrometro": {
+      "type": "string"
+    },
+    "has_hidrometro_quente": {
+      "type": "boolean"
+    },
+    "hidrometro_quente": {
+      "type": "string"
+    },
+    "is_hidrometro_invertido": {
+      "type": "boolean"
+    },
+    "bloco": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bloco.bloco",
+      "inversedBy": "imovels"
+    },
+    "leituras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::leitura.leitura",
+      "mappedBy": "imovel"
+    },
+    "is_leitura_feita": {
+      "type": "boolean"
+    },
+    "leitura_hidrometro_anterior": {
+      "type": "integer"
+    },
+    "leitura_hidrometro_quente_anterior": {
+      "type": "integer"
+    },
+    "leitura_gas_anterior": {
+      "type": "integer"
+    }
+  }
+}
